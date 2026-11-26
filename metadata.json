@@ -1,0 +1,6 @@
+{
+  "name": "Clinique El Yasmine — Prise de Rendez-vous Médical & Esthétique",
+  "description": "Plateforme de prise de rendez-vous médicaux, dentaires, dermatologiques et esthétiques en Algérie avec espace secrétariat intégré.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
