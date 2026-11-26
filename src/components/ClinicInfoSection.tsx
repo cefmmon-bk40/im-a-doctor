@@ -1,4 +1,4 @@
-import { Clock, MapPin, Phone, ShieldCheck } from 'lucide-react';
+import { Clock, ExternalLink, MapPin, Phone, ShieldCheck } from 'lucide-react';
 import { ClinicConfig, VerticalProfile } from '../types/clinic';
 
 interface ClinicInfoSectionProps {
@@ -9,15 +9,18 @@ interface ClinicInfoSectionProps {
 export function ClinicInfoSection({ config, profile }: ClinicInfoSectionProps) {
   const { theme } = profile;
   const telHref = `tel:${config.phone.replace(/\s+/g, '')}`;
+  const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+    `${config.name} ${config.city} Algérie`
+  )}`;
 
   return (
     <section
-      id="preparation"
+      id="acces"
       className={`py-12 sm:py-16 border-t transition-colors duration-300 ${theme.borderHairline}`}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-12 gap-8">
         {/* Preparation Guidelines */}
-        <div className="lg:col-span-7 space-y-5">
+        <div id="preparation" className="lg:col-span-6 space-y-5">
           <div className="space-y-1.5">
             <p className={`text-xs font-semibold tracking-wide ${theme.accentText}`}>
               Préparation clinique
@@ -38,7 +41,9 @@ export function ClinicInfoSection({ config, profile }: ClinicInfoSectionProps) {
               {profile.prepProtocolBody}
             </p>
 
-            <ul className={`space-y-3 pt-2 border-t text-sm ${theme.borderHairline} ${theme.textSecondary}`}>
+            <ul
+              className={`space-y-3 pt-3 border-t text-sm ${theme.borderHairline} ${theme.textSecondary}`}
+            >
               {profile.prepChecklist.map((item, idx) => (
                 <li key={item} className="flex items-start gap-3">
                   <span
@@ -53,18 +58,18 @@ export function ClinicInfoSection({ config, profile }: ClinicInfoSectionProps) {
           </div>
         </div>
 
-        {/* Access & Hours */}
-        <div id="acces" className="lg:col-span-5 space-y-5">
+        {/* Sleek Horaires, Accès & Localisation Card */}
+        <div className="lg:col-span-6 space-y-5">
           <div className="space-y-1.5">
             <p className={`text-xs font-semibold tracking-wide ${theme.accentText}`}>
-              Informations pratiques
+              Localisation &amp; Contact
             </p>
             <h2
               className={`text-2xl sm:text-3xl font-semibold tracking-tight ${
                 theme.usesSerifDisplay ? 'font-display-serif text-3xl sm:text-4xl' : ''
               } ${theme.textPrimary}`}
             >
-              Horaires &amp; Accès
+              Horaires, Accès &amp; Localisation
             </h2>
           </div>
 
@@ -74,8 +79,10 @@ export function ClinicInfoSection({ config, profile }: ClinicInfoSectionProps) {
             <div className="flex items-start gap-3">
               <MapPin className={`w-5 h-5 shrink-0 mt-0.5 ${theme.accentText}`} aria-hidden="true" />
               <div>
-                <div className={`text-sm font-semibold ${theme.textPrimary}`}>{config.name}</div>
-                <div className={`text-sm ${theme.textSecondary}`}>{config.city}, Algérie</div>
+                <div className={`text-base font-semibold ${theme.textPrimary}`}>{config.name}</div>
+                <div className={`text-sm mt-0.5 ${theme.textSecondary}`}>
+                  {config.city}, Algérie
+                </div>
               </div>
             </div>
 
@@ -83,26 +90,41 @@ export function ClinicInfoSection({ config, profile }: ClinicInfoSectionProps) {
               <Clock className={`w-5 h-5 shrink-0 mt-0.5 ${theme.accentText}`} aria-hidden="true" />
               <div className="text-sm space-y-1">
                 <div className={`font-semibold tabular-nums ${theme.textPrimary}`}>
-                  {theme.hoursLabel}
+                  Samedi - Jeudi : 08h30 - 17h30
                 </div>
-                <div className={theme.textMuted}>Fermé le vendredi · Accueil sans interruption</div>
+                <div className={theme.textMuted}>
+                  Fermé le vendredi · Accueil sans interruption
+                </div>
               </div>
             </div>
 
-            <div className={`pt-4 border-t flex items-start gap-3 ${theme.borderHairline}`}>
-              <Phone className={`w-5 h-5 shrink-0 mt-0.5 ${theme.accentText}`} aria-hidden="true" />
-              <div className="text-sm space-y-1">
-                <div className={`font-semibold ${theme.textPrimary}`}>Secrétariat direct</div>
-                <a
-                  href={telHref}
-                  className={`inline-block font-semibold tabular-nums hover:underline ${theme.accentText}`}
-                >
-                  {config.phone}
-                </a>
-              </div>
+            {/* Interactive Actions: Click-to-Call + Open on Google Maps */}
+            <div
+              className={`pt-4 border-t flex flex-col sm:flex-row items-stretch sm:items-center gap-3 ${theme.borderHairline}`}
+            >
+              <a
+                href={telHref}
+                className={`flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-sm font-semibold border transition-colors whitespace-nowrap ${theme.bgSubtle} ${theme.borderHairline} ${theme.textPrimary} hover:opacity-90`}
+              >
+                <Phone className={`w-4 h-4 shrink-0 ${theme.accentText}`} aria-hidden="true" />
+                <span className="tabular-nums">{config.phone}</span>
+              </a>
+
+              <a
+                href={mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-sm font-semibold transition-all whitespace-nowrap ${theme.accentBg} ${theme.accentHoverBg} ${theme.accentButtonText}`}
+              >
+                <MapPin className="w-4 h-4 shrink-0" aria-hidden="true" />
+                <span>Ouvrir sur Google Maps</span>
+                <ExternalLink className="w-3.5 h-3.5 shrink-0 opacity-80" aria-hidden="true" />
+              </a>
             </div>
 
-            <div className={`pt-4 border-t flex items-center gap-2 text-xs ${theme.borderHairline} ${theme.textMuted}`}>
+            <div
+              className={`pt-3 border-t flex items-center gap-2 text-xs ${theme.borderHairline} ${theme.textMuted}`}
+            >
               <ShieldCheck className={`w-4 h-4 shrink-0 ${theme.accentText}`} aria-hidden="true" />
               <span>Respect strict du secret médical &amp; des normes d’hygiène</span>
             </div>

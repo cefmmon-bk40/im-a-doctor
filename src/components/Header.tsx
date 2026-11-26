@@ -35,16 +35,16 @@ export function Header({ config, theme, onOpenReception }: HeaderProps) {
             Prestations
           </a>
           <a
-            href="#rendez-vous"
+            href="#engagements"
             className="hover:underline underline-offset-4 transition-colors whitespace-nowrap shrink-0"
           >
-            Prendre RDV
+            Engagements
           </a>
           <a
-            href="#preparation"
+            href="#faq"
             className="hover:underline underline-offset-4 transition-colors whitespace-nowrap shrink-0"
           >
-            Préparation
+            FAQ
           </a>
           <a
             href="#acces"

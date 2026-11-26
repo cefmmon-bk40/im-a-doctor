@@ -133,3 +133,27 @@ test('WhatsApp automation URLs include encoded patient details and 213 number', 
   assert.ok(decodeURIComponent(gpsUrl).includes('Hydra, Alger'));
   assert.ok(decodeURIComponent(gpsUrl).includes('google.com/maps'));
 });
+
+import { VERTICAL_PROFILES } from '../data/verticals';
+
+test('all 4 verticals have symmetrical grids and 22 strictly unique photo URLs', () => {
+  assert.equal(VERTICAL_PROFILES.laser.services.length, 6);
+  assert.equal(VERTICAL_PROFILES.dental.services.length, 4);
+  assert.equal(VERTICAL_PROFILES.derma.services.length, 4);
+  assert.equal(VERTICAL_PROFILES.doctor.services.length, 4);
+
+  const allPhotoUrls: string[] = [];
+  for (const vertical of Object.values(VERTICAL_PROFILES)) {
+    allPhotoUrls.push(vertical.heroImageUrl);
+    for (const service of vertical.services) {
+      allPhotoUrls.push(service.imageUrl);
+    }
+    assert.equal(vertical.trustPillars.length, 3);
+    assert.equal(vertical.faqs.length, 3);
+  }
+
+  assert.equal(allPhotoUrls.length, 22);
+  const normalizePhotoId = (url: string) => url.split('?')[0];
+  assert.equal(new Set(allPhotoUrls.map(normalizePhotoId)).size, 22);
+});
+

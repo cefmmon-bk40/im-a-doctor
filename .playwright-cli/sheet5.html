@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><style>
+body { background: #111; color: #fff; font-family: sans-serif; padding: 16px; }
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.card { background: #222; border-radius: 8px; overflow: hidden; padding: 8px; }
+img { width: 100%; height: 180px; object-fit: cover; display: block; border-radius: 4px; }
+.meta { font-size: 12px; margin-top: 6px; word-break: break-all; }
+</style></head>
+<body>
+<div class="grid">
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1677026010083-78ec7f1b84ed?auto=format&fit=crop&w=800&q=80" />
+    <div class="meta">A: 1677026010083 (white teeth close-up)</div>
+  </div>
+  <div class="card">
+    <img src="https://plus.unsplash.com/premium_photo-1671656333460-793292581bc6?auto=format&fit=crop&w=800&q=80" />
+    <div class="meta">B: premium 1671656333460 (bright white smile)</div>
+  </div>
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1676312754401-d97fe43c2c4b?auto=format&fit=crop&w=800&q=80" />
+    <div class="meta">C: 1676312754401 (derma magnifying glass)</div>
+  </div>
+  <div class="card">
+    <img src="https://plus.unsplash.com/premium_photo-1661904030980-5661f0961d33?auto=format&fit=crop&w=800&q=80" />
+    <div class="meta">D: premium 1661904030980 (laser machine)</div>
+  </div>
+  <div class="card">
+    <img src="https://plus.unsplash.com/premium_photo-1661386084694-0523d8d1fc9e?auto=format&fit=crop&w=800&q=80" />
+    <div class="meta">E: premium 1661386084694 (leg/laser treatment)</div>
+  </div>
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1581595220892-b0739db3ba8c?auto=format&fit=crop&w=800&q=80" />
+    <div class="meta">F: 1581595220892 (ultrasound/medical equipment)</div>
+  </div>
+</div>
+<script>
+window.addEventListener('load', () => {
+  document.querySelectorAll('img').forEach((img, idx) => {
+    const meta = img.parentElement.querySelector('.meta');
+    meta.textContent += ' | ' + img.naturalWidth + 'x' + img.naturalHeight;
+  });
+});
+</script>
+</body>
+</html>

@@ -11,8 +11,9 @@ import { AgencySwitcherBar } from './components/AgencySwitcherBar';
 import { Header } from './components/Header';
 import { HeroSection } from './components/HeroSection';
 import { BookingFlow } from './components/BookingFlow';
+import { MedicalCommitmentsSection } from './components/MedicalCommitmentsSection';
+import { FaqSection } from './components/FaqSection';
 import { ClinicInfoSection } from './components/ClinicInfoSection';
-import { TrustGallerySection } from './components/TrustGallerySection';
 import { Footer } from './components/Footer';
 import { ReceptionModal } from './components/ReceptionModal';
 
@@ -116,13 +117,14 @@ export default function App() {
           isReceptionOpen={isReceptionOpen}
         />
 
-        <ClinicInfoSection config={config} profile={profile} />
-
-        <TrustGallerySection
-          vertical={config.type}
+        <MedicalCommitmentsSection
           theme={theme}
-          items={profile.gallery}
+          pillars={profile.trustPillars}
         />
+
+        <FaqSection key={`faq-${config.type}`} theme={theme} faqs={profile.faqs} />
+
+        <ClinicInfoSection config={config} profile={profile} />
       </main>
 
       <Footer config={config} theme={theme} />

@@ -22,11 +22,11 @@ export function Footer({ config, theme }: FooterProps) {
           <a href="#prestations" className="hover:underline">
             Prestations
           </a>
-          <a href="#rendez-vous" className="hover:underline">
-            Prendre RDV
+          <a href="#engagements" className="hover:underline">
+            Engagements
           </a>
-          <a href="#preparation" className="hover:underline">
-            Préparation
+          <a href="#faq" className="hover:underline">
+            FAQ
           </a>
           <a href="#acces" className="hover:underline">
             Horaires &amp; Accès

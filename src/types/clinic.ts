@@ -22,11 +22,17 @@ export interface ServiceOption {
   prepNote?: string;
 }
 
-export interface GalleryItem {
+export interface TrustPillar {
   id: string;
+  badge: string;
   title: string;
   description: string;
-  imageUrl: string;
+}
+
+export interface FaqItem {
+  id: string;
+  question: string;
+  answer: string;
 }
 
 export interface WorkingDay {
@@ -49,7 +55,7 @@ export interface Appointment {
   serviceId: string;
   serviceTitle: string;
   priceDa: number;
-  detailLabel?: string; // e.g., "Pack 6 Séances (-20%)", "Dr. Titulaire", "Suivi traitement"
+  detailLabel?: string;
   medicalNote?: string;
   status: AppointmentStatus;
   createdAt: string;
@@ -63,14 +69,19 @@ export interface VerticalTheme {
   heroTitle: string;
   heroSubtitle: string;
   hoursLabel: string;
+  isDark: boolean;
   bgCanvas: string;
   bgSurface: string;
   bgSubtle: string;
+  inputBg: string;
+  bookedSlotClass: string;
+  imagePlaceholderBg: string;
   textPrimary: string;
   textSecondary: string;
   textMuted: string;
   accentBg: string;
   accentHoverBg: string;
+  accentButtonText: string;
   accentText: string;
   accentBorder: string;
   accentSoftBg: string;
@@ -88,7 +99,8 @@ export interface VerticalProfile {
   heroImageUrl: string;
   heroImageAlt: string;
   services: ServiceOption[];
-  gallery: GalleryItem[];
+  trustPillars: TrustPillar[];
+  faqs: FaqItem[];
   prepProtocolTitle: string;
   prepProtocolBody: string;
   prepChecklist: string[];

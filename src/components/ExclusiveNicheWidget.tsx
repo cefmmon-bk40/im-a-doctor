@@ -63,15 +63,15 @@ export function ExclusiveNicheWidget({
           <div
             role="group"
             aria-label="Choisir entre 1 séance ou Pack 6 séances"
-            className="inline-flex w-fit self-start sm:self-auto p-1 rounded-lg bg-white border border-[#E6E0D4] shrink-0"
+            className={`inline-flex w-fit self-start sm:self-auto p-1 rounded-lg border shrink-0 ${theme.bgSurface} ${theme.borderHairline}`}
           >
             <button
               type="button"
               onClick={() => onToggleLaserPack6(false)}
               className={`px-3.5 py-2 rounded-md text-xs font-semibold transition-all duration-200 whitespace-nowrap cursor-pointer ${
                 !isLaserPack6
-                  ? 'bg-[#141414] text-white shadow-sm'
-                  : 'text-[#4A463F] hover:text-[#141414]'
+                  ? `${theme.accentBg} ${theme.accentButtonText} shadow-sm`
+                  : `${theme.textSecondary} hover:opacity-90`
               }`}
             >
               1 Séance
@@ -81,8 +81,8 @@ export function ExclusiveNicheWidget({
               onClick={() => onToggleLaserPack6(true)}
               className={`px-3.5 py-2 rounded-md text-xs font-semibold transition-all duration-200 whitespace-nowrap cursor-pointer ${
                 isLaserPack6
-                  ? 'bg-[#C5A059] text-[#141414] shadow-sm'
-                  : 'text-[#4A463F] hover:text-[#141414]'
+                  ? `${theme.accentBg} ${theme.accentButtonText} shadow-sm`
+                  : `${theme.textSecondary} hover:opacity-90`
               }`}
             >
               Pack 6 Séances (-20% Offert)
@@ -144,7 +144,7 @@ export function ExclusiveNicheWidget({
               onClick={() => onChangeDermaVisitType('bilan')}
               className={`px-3 py-2 rounded-md text-xs font-semibold transition-all duration-200 whitespace-nowrap cursor-pointer ${
                 dermaVisitType === 'bilan'
-                  ? 'bg-[#059669] text-white'
+                  ? 'bg-[#047857] text-white'
                   : 'text-[#1F3A32] hover:text-[#064E3B]'
               }`}
             >
@@ -155,7 +155,7 @@ export function ExclusiveNicheWidget({
               onClick={() => onChangeDermaVisitType('suivi')}
               className={`px-3 py-2 rounded-md text-xs font-semibold transition-all duration-200 whitespace-nowrap cursor-pointer ${
                 dermaVisitType === 'suivi'
-                  ? 'bg-[#059669] text-white'
+                  ? 'bg-[#047857] text-white'
                   : 'text-[#1F3A32] hover:text-[#064E3B]'
               }`}
             >
@@ -190,7 +190,7 @@ export function ExclusiveNicheWidget({
               }
             >
               <div className="w-full">
-                <div className="h-40 w-full overflow-hidden rounded-t-2xl bg-slate-100">
+                <div className={`h-40 w-full overflow-hidden rounded-t-2xl ${theme.imagePlaceholderBg}`}>
                   <ResilientImage
                     src={service.imageUrl}
                     alt={service.title}

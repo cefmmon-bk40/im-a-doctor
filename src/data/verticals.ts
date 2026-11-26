@@ -11,28 +11,33 @@ export const VERTICAL_PROFILES: Record<VerticalType, VerticalProfile> = {
       heroSubtitle:
         'Consultez les tarifs transparents par séance ou pack, sélectionnez votre zone et réservez votre protocole clinique en moins de 30 secondes.',
       hoursLabel: 'Sam - Jeu : 08h30 - 17h30',
-      bgCanvas: 'bg-[#FAF9F6]',
-      bgSurface: 'bg-white',
-      bgSubtle: 'bg-[#F3EFE6]',
-      textPrimary: 'text-[#141414]',
-      textSecondary: 'text-[#4A463F]',
-      textMuted: 'text-[#7A746A]',
-      accentBg: 'bg-[#141414]',
-      accentHoverBg: 'hover:bg-[#292622]',
-      accentText: 'text-[#C5A059]',
+      isDark: true,
+      bgCanvas: 'bg-[#0B0B0E]',
+      bgSurface: 'bg-[#16161C]',
+      bgSubtle: 'bg-[#1E1E26]',
+      inputBg: 'bg-[#0F0F14]',
+      bookedSlotClass: 'bg-[#121218] border-[#272733] text-[#64748B] cursor-not-allowed',
+      imagePlaceholderBg: 'bg-[#1E1E26]',
+      textPrimary: 'text-[#F8FAFC]',
+      textSecondary: 'text-[#CBD5E1]',
+      textMuted: 'text-[#94A3B8]',
+      accentBg: 'bg-[#C5A059]',
+      accentHoverBg: 'hover:bg-[#D4B06A]',
+      accentButtonText: 'text-[#0B0B0E]',
+      accentText: 'text-[#D8B467]',
       accentBorder: 'border-[#C5A059]',
-      accentSoftBg: 'bg-[#C5A059]/12',
-      accentSoftText: 'text-[#8C6D2E]',
-      borderHairline: 'border-[#E6E0D4]',
-      headerBg: 'bg-[#FAF9F6]/90',
+      accentSoftBg: 'bg-[#C5A059]/15',
+      accentSoftText: 'text-[#E5C687]',
+      borderHairline: 'border-[#C5A059]/25',
+      headerBg: 'bg-[#0B0B0E]/92',
       usesSerifDisplay: true,
       accentHex: '#C5A059',
-      darkSurfaceHex: '#141414',
-      canvasHex: '#FAF9F6',
+      darkSurfaceHex: '#16161C',
+      canvasHex: '#0B0B0E',
     },
     heroImageUrl:
-      'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1400&q=85',
-    heroImageAlt: 'Cabine de soins laser et médecine esthétique de luxe',
+      'https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=1400&q=85',
+    heroImageAlt: 'Cabine privée de soins laser et médecine esthétique de luxe',
     services: [
       {
         id: 'laser-visage',
@@ -41,17 +46,17 @@ export const VERTICAL_PROFILES: Record<VerticalType, VerticalProfile> = {
         durationMin: 20,
         priceDa: 5500,
         imageUrl:
-          'https://images.unsplash.com/photo-1643402305704-474b129161a5?auto=format&fit=crop&w=900&q=80',
+          'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=900&q=80',
         category: 'Épilation Laser',
       },
       {
         id: 'laser-aisselles',
-        title: 'Aisselles',
-        subtitle: 'Séance rapide indolore avec système de refroidissement cryo',
+        title: 'Aisselles & Zones ciblées',
+        subtitle: 'Séance rapide indolore avec refroidissement cutané continu',
         durationMin: 15,
         priceDa: 4000,
         imageUrl:
-          'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=900&q=80',
+          'https://plus.unsplash.com/premium_photo-1661386084694-0523d8d1fc9e?auto=format&fit=crop&w=900&q=80',
         category: 'Épilation Laser',
       },
       {
@@ -61,23 +66,23 @@ export const VERTICAL_PROFILES: Record<VerticalType, VerticalProfile> = {
         durationMin: 45,
         priceDa: 14000,
         imageUrl:
-          'https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?auto=format&fit=crop&w=900&q=80',
+          'https://plus.unsplash.com/premium_photo-1661573196414-7c8bcf3c23da?auto=format&fit=crop&w=900&q=80',
         category: 'Épilation Laser',
       },
       {
         id: 'laser-corps',
         title: 'Corps complet',
-        subtitle: 'Protocole intégral encadré par praticienne certifiée',
+        subtitle: 'Protocole intégral encadré par praticienne certifiée en suite privée',
         durationMin: 75,
         priceDa: 26000,
         imageUrl:
-          'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=900&q=80',
+          'https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=900&q=80',
         category: 'Épilation Laser',
       },
       {
         id: 'laser-hydrafacial',
         title: 'Soin Hydrafacial',
-        subtitle: 'Nettoyage profond, extraction douce & infusion antioxydante',
+        subtitle: 'Hydro-dermabrasion profonde, extraction douce & sérums antioxydants',
         durationMin: 45,
         priceDa: 12000,
         imageUrl:
@@ -91,34 +96,51 @@ export const VERTICAL_PROFILES: Record<VerticalType, VerticalProfile> = {
         durationMin: 30,
         priceDa: 18000,
         imageUrl:
-          'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=900&q=80',
+          'https://images.unsplash.com/photo-1552693673-1bf958298935?auto=format&fit=crop&w=900&q=80',
         category: 'Médecine Esthétique',
       },
     ],
-    gallery: [
+    trustPillars: [
       {
-        id: 'laser-gal-1',
-        title: 'Équipements Médicaux de Pointe',
+        id: 'laser-pillar-1',
+        badge: 'Technologie',
+        title: 'Plateau Technique Certifié CE Médical',
         description:
-          'Plateformes laser Alexandrite & Nd:YAG calibrées pour chaque phototype avec refroidissement cutané continu.',
-        imageUrl:
-          'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1000&q=80',
+          'Plateformes double longueur d’onde Alexandrite 755nm & Nd:YAG 1064nm avec refroidissement cryogénique intégré.',
       },
       {
-        id: 'laser-gal-2',
-        title: "Protocoles d'Hygiène & Stérilisation",
+        id: 'laser-pillar-2',
+        badge: 'Asepsie',
+        title: 'Hygiène & Stérilisation stricte',
         description:
-          'Désinfection systématique des pièces à main et consommables à usage unique entre chaque patient.',
-        imageUrl:
-          'https://images.unsplash.com/photo-1582719471384-894fbb16e074?auto=format&fit=crop&w=1000&q=80',
+          'Désinfection médicale des embouts entre chaque séance, protections oculaires homologuées et consommables stériles.',
       },
       {
-        id: 'laser-gal-3',
-        title: 'Espace Accueil & Confort Patient',
+        id: 'laser-pillar-3',
+        badge: 'Sur-mesure',
+        title: 'Suivi Patient Personnalisé',
         description:
-          'Salon d’attente discret et cabines insonorisées pensées pour une expérience sereine et confidentielle.',
-        imageUrl:
-          'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1000&q=80',
+          'Paramétrage précis selon votre phototype et suivi évolutif de la densité pilaire et de la tolérance cutanée.',
+      },
+    ],
+    faqs: [
+      {
+        id: 'laser-faq-1',
+        question: 'Combien de séances laser sont nécessaires pour un résultat durable ?',
+        answer:
+          'En moyenne, 6 à 8 séances espacées de 4 à 6 semaines permettent d’obtenir une réduction durable de la pilosité sur la majorité des zones. Le Pack 6 Séances (-20%) couvre le protocole de base complet.',
+      },
+      {
+        id: 'laser-faq-2',
+        question: 'Quelle préparation faut-il respecter avant une séance ?',
+        answer:
+          'Rasez la zone traitée 24h avant votre venue (sans cire ni épilateur), évitez toute exposition solaire directe 7 jours avant et venez sans crème, huile ou déodorant.',
+      },
+      {
+        id: 'laser-faq-3',
+        question: 'Le laser convient-il aux peaux mates ou bronzées ?',
+        answer:
+          'Oui, grâce à la double longueur d’onde Alexandrite et Nd:YAG, nos praticiennes adaptent la fluence et le spectre à chaque phototype en toute sécurité.',
       },
     ],
     prepProtocolTitle: 'Protocole avant séance',
@@ -204,14 +226,19 @@ export const VERTICAL_PROFILES: Record<VerticalType, VerticalProfile> = {
       heroSubtitle:
         'Un plateau technique stérilisé aux normes suisses avec orientation immédiate selon l’urgence de votre situation et choix de votre praticien.',
       hoursLabel: 'Sam - Jeu : 08h30 - 17h30',
+      isDark: false,
       bgCanvas: 'bg-[#F8FAFC]',
       bgSurface: 'bg-white',
       bgSubtle: 'bg-[#F1F5F9]',
+      inputBg: 'bg-[#F8FAFC]',
+      bookedSlotClass: 'bg-slate-100 border-slate-200 text-slate-400 cursor-not-allowed',
+      imagePlaceholderBg: 'bg-slate-100',
       textPrimary: 'text-[#0F172A]',
       textSecondary: 'text-[#334155]',
       textMuted: 'text-[#64748B]',
       accentBg: 'bg-[#0D9488]',
       accentHoverBg: 'hover:bg-[#0F766E]',
+      accentButtonText: 'text-white',
       accentText: 'text-[#0D9488]',
       accentBorder: 'border-[#0D9488]',
       accentSoftBg: 'bg-[#0D9488]/10',
@@ -234,7 +261,7 @@ export const VERTICAL_PROFILES: Record<VerticalType, VerticalProfile> = {
         durationMin: 30,
         priceDa: 3500,
         imageUrl:
-          'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=900&q=80',
+          'https://images.unsplash.com/photo-1663755489920-5e09f66d011a?auto=format&fit=crop&w=900&q=80',
         category: 'Créneau prioritaire',
         isUrgent: true,
       },
@@ -245,7 +272,7 @@ export const VERTICAL_PROFILES: Record<VerticalType, VerticalProfile> = {
         durationMin: 60,
         priceDa: 28000,
         imageUrl:
-          'https://images.unsplash.com/photo-1551843073-4a9a5b6fcd5f?auto=format&fit=crop&w=900&q=80',
+          'https://images.unsplash.com/photo-1677026010083-78ec7f1b84ed?auto=format&fit=crop&w=900&q=80',
         category: 'Esthétique',
       },
       {
@@ -255,54 +282,18 @@ export const VERTICAL_PROFILES: Record<VerticalType, VerticalProfile> = {
         durationMin: 30,
         priceDa: 4500,
         imageUrl:
-          'https://images.unsplash.com/photo-1663755489920-5e09f66d011a?auto=format&fit=crop&w=900&q=80',
+          'https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=900&q=80',
         category: 'Prévention',
       },
       {
-        id: 'dental-implant',
-        title: 'Implantologie & Prothèse',
-        subtitle: 'Bilan pré-implantaire, scanner 3D et couronnes zircone',
+        id: 'dental-implant-odf',
+        title: 'Implantologie & Orthodontie',
+        subtitle: 'Aligneurs transparents, scanner 3D, couronnes zircone & bilan implantaire',
         durationMin: 45,
         priceDa: 6000,
         imageUrl:
-          'https://images.unsplash.com/photo-1663755781620-b9b8fdbdead5?auto=format&fit=crop&w=900&q=80',
-        category: 'Chirurgie & Prothèse',
-      },
-      {
-        id: 'dental-odf',
-        title: 'Orthodontie (ODF)',
-        subtitle: 'Aligneurs transparents et bagues auto-ligaturantes adultes & ados',
-        durationMin: 30,
-        priceDa: 4000,
-        imageUrl:
-          'https://images.unsplash.com/photo-1656514894252-fb336a3ad6a6?auto=format&fit=crop&w=900&q=80',
-        category: 'Orthodontie',
-      },
-    ],
-    gallery: [
-      {
-        id: 'dental-gal-1',
-        title: 'Équipements Médicaux de Pointe',
-        description:
-          'Fauteuils ergonomiques dernière génération, radiographie panoramique numérique et empreinte optique 3D.',
-        imageUrl:
-          'https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1000&q=80',
-      },
-      {
-        id: 'dental-gal-2',
-        title: "Protocoles d'Hygiène & Stérilisation",
-        description:
-          'Chaîne de stérilisation par autoclave Classe B sous sachets scellés et traçabilité par cycle.',
-        imageUrl:
-          'https://images.unsplash.com/photo-1582719471384-894fbb16e074?auto=format&fit=crop&w=1000&q=80',
-      },
-      {
-        id: 'dental-gal-3',
-        title: 'Espace Accueil & Confort Patient',
-        description:
-          'Accueil apaisant et gestion fluide des urgences pour limiter l’attente avant le passage au fauteuil.',
-        imageUrl:
-          'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1000&q=80',
+          'https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=900&q=80',
+        category: 'Spécialités',
       },
     ],
     practitioners: [
@@ -315,6 +306,49 @@ export const VERTICAL_PROFILES: Record<VerticalType, VerticalProfile> = {
         id: 'dr-specialiste',
         name: 'Spécialiste ODF/Implant',
         role: 'Implantologie avancée & Orthodontie',
+      },
+    ],
+    trustPillars: [
+      {
+        id: 'dental-pillar-1',
+        badge: 'Plateau 3D',
+        title: 'Plateau Technique Certifié',
+        description:
+          'Radiographie panoramique numérique, caméra intra-orale et fauteuils ergonomiques pour un diagnostic immédiat.',
+      },
+      {
+        id: 'dental-pillar-2',
+        badge: 'Autoclave B',
+        title: 'Hygiène & Stérilisation stricte',
+        description:
+          'Chaîne complète de stérilisation sous sachets scellés par autoclave Classe B avec traçabilité de chaque cycle.',
+      },
+      {
+        id: 'dental-pillar-3',
+        badge: 'Triage Rapide',
+        title: 'Suivi Patient Personnalisé',
+        description:
+          'Créneaux dédiés aux douleurs aiguës et plans de traitement détaillés remis par écrit dès la première visite.',
+      },
+    ],
+    faqs: [
+      {
+        id: 'dental-faq-1',
+        question: 'Comment sont gérées les urgences dentaires le jour même ?',
+        answer:
+          'Nous bloquons chaque matin et chaque après-midi des créneaux prioritaires pour les douleurs aiguës, abcès ou fractures dentaires afin de vous soulager rapidement.',
+      },
+      {
+        id: 'dental-faq-2',
+        question: 'Un devis écrit est-il fourni avant une pose d’implant ou d’aligneurs ?',
+        answer:
+          'Oui, à l’issue du bilan et de l’examen radiographique, un plan de traitement détaillé avec échéancier transparent en DA vous est systématiquement remis.',
+      },
+      {
+        id: 'dental-faq-3',
+        question: 'Le blanchiment dentaire provoque-t-il une sensibilité ?',
+        answer:
+          'Nous réalisons d’abord un contrôle de l’émail et des gencives, puis utilisons un gel médical désensibilisant à concentration contrôlée pour un confort optimal.',
       },
     ],
     prepProtocolTitle: 'Consignes avant votre soin dentaire',
@@ -366,9 +400,9 @@ export const VERTICAL_PROFILES: Record<VerticalType, VerticalProfile> = {
         time: '14:00',
         patientName: 'Meriem Boudiaf',
         patientPhone: '0770 19 63 40',
-        serviceId: 'dental-odf',
-        serviceTitle: 'Orthodontie (ODF)',
-        priceDa: 4000,
+        serviceId: 'dental-implant-odf',
+        serviceTitle: 'Implantologie & Orthodontie',
+        priceDa: 6000,
         detailLabel: 'Spécialiste ODF/Implant',
         status: 'Confirmé',
         createdAt: '2026-11-24T15:00:00Z',
@@ -380,10 +414,10 @@ export const VERTICAL_PROFILES: Record<VerticalType, VerticalProfile> = {
         time: '10:00',
         patientName: 'Karim Mansouri',
         patientPhone: '0558 90 27 11',
-        serviceId: 'dental-implant',
-        serviceTitle: 'Implantologie & Prothèse',
-        priceDa: 6000,
-        detailLabel: 'Spécialiste ODF/Implant',
+        serviceId: 'dental-blanchiment',
+        serviceTitle: 'Blanchiment & Esthétique du Sourire',
+        priceDa: 28000,
+        detailLabel: 'Dr. Titulaire',
         status: 'Confirmé',
         createdAt: '2026-11-24T17:40:00Z',
       },
@@ -400,28 +434,33 @@ export const VERTICAL_PROFILES: Record<VerticalType, VerticalProfile> = {
       heroSubtitle:
         'Pré-qualifiez votre motif cutané ou capillaire avant votre passage en consultation pour une prise en charge ciblée dès la première visite.',
       hoursLabel: 'Sam - Jeu : 08h30 - 17h30',
-      bgCanvas: 'bg-[#FDFDFB]',
+      isDark: false,
+      bgCanvas: 'bg-[#FFFFFF]',
       bgSurface: 'bg-white',
       bgSubtle: 'bg-[#ECFDF5]',
+      inputBg: 'bg-[#F8FAFC]',
+      bookedSlotClass: 'bg-slate-100 border-slate-200 text-slate-400 cursor-not-allowed',
+      imagePlaceholderBg: 'bg-[#ECFDF5]',
       textPrimary: 'text-[#064E3B]',
       textSecondary: 'text-[#1F3A32]',
-      textMuted: 'text-[#52796F]',
-      accentBg: 'bg-[#059669]',
-      accentHoverBg: 'hover:bg-[#047857]',
-      accentText: 'text-[#059669]',
-      accentBorder: 'border-[#059669]',
+      textMuted: 'text-[#4B6B61]',
+      accentBg: 'bg-[#047857]',
+      accentHoverBg: 'hover:bg-[#065F46]',
+      accentButtonText: 'text-white',
+      accentText: 'text-[#047857]',
+      accentBorder: 'border-[#047857]',
       accentSoftBg: 'bg-[#ECFDF5]',
       accentSoftText: 'text-[#047857]',
       borderHairline: 'border-[#D1FAE5]',
-      headerBg: 'bg-[#FDFDFB]/95',
+      headerBg: 'bg-white/95',
       usesSerifDisplay: false,
-      accentHex: '#059669',
+      accentHex: '#047857',
       darkSurfaceHex: '#064E3B',
-      canvasHex: '#FDFDFB',
+      canvasHex: '#FFFFFF',
     },
     heroImageUrl:
-      'https://images.unsplash.com/photo-1643402305704-474b129161a5?auto=format&fit=crop&w=1400&q=85',
-    heroImageAlt: 'Consultation dermatologique et soin cutané de précision',
+      'https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?auto=format&fit=crop&w=1400&q=85',
+    heroImageAlt: 'Dermatologue en consultation avec une patiente dans un cabinet lumineux',
     services: [
       {
         id: 'derma-acne',
@@ -430,7 +469,7 @@ export const VERTICAL_PROFILES: Record<VerticalType, VerticalProfile> = {
         durationMin: 30,
         priceDa: 4000,
         imageUrl:
-          'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=900&q=80',
+          'https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=900&q=80',
         category: 'Dermatologie clinique',
       },
       {
@@ -440,7 +479,7 @@ export const VERTICAL_PROFILES: Record<VerticalType, VerticalProfile> = {
         durationMin: 40,
         priceDa: 11000,
         imageUrl:
-          'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=900&q=80',
+          'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=900&q=80',
         category: 'Médecine capillaire',
       },
       {
@@ -450,54 +489,61 @@ export const VERTICAL_PROFILES: Record<VerticalType, VerticalProfile> = {
         durationMin: 30,
         priceDa: 4500,
         imageUrl:
-          'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=900&q=80',
+          'https://images.unsplash.com/photo-1509967419530-da38b4704bc6?auto=format&fit=crop&w=900&q=80',
         category: 'Dermatologie esthétique',
       },
       {
-        id: 'derma-allergie',
-        title: 'Allergie & Eczéma',
-        subtitle: 'Prise en charge des dermatites atopiques, urticaires et mycoses',
-        durationMin: 25,
-        priceDa: 3500,
-        imageUrl:
-          'https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?auto=format&fit=crop&w=900&q=80',
-        category: 'Dermatologie clinique',
-      },
-      {
         id: 'derma-naevus',
-        title: 'Contrôle Grains de beauté',
-        subtitle: 'Dépistage dermatoscopique numérique haute définition',
+        title: 'Allergie, Eczéma & Grains de beauté',
+        subtitle: 'Dépistage dermatoscopique haute définition, dermatites & urticaires',
         durationMin: 25,
         priceDa: 4000,
         imageUrl:
-          'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=900&q=80',
-        category: 'Prévention',
+          'https://images.unsplash.com/photo-1676312754401-d97fe43c2c4b?auto=format&fit=crop&w=900&q=80',
+        category: 'Prévention & Clinique',
       },
     ],
-    gallery: [
+    trustPillars: [
       {
-        id: 'derma-gal-1',
-        title: 'Équipements Médicaux de Pointe',
+        id: 'derma-pillar-1',
+        badge: 'Dermatoscopie',
+        title: 'Plateau Technique Certifié',
         description:
-          'Dermatoscope numérique haute résolution, lampe de Wood et dispositifs de mésothérapie médicale.',
-        imageUrl:
-          'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1000&q=80',
+          'Dermatoscope optique et numérique haute définition, lampe de Wood et centrifugeuse médicale dédiée au PRP.',
       },
       {
-        id: 'derma-gal-2',
-        title: "Protocoles d'Hygiène & Stérilisation",
+        id: 'derma-pillar-2',
+        badge: 'Asepsie',
+        title: 'Hygiène & Stérilisation stricte',
         description:
-          'Préparation aseptique des actes cutanés et capillaires selon les standards cliniques internationaux.',
-        imageUrl:
-          'https://images.unsplash.com/photo-1582719471384-894fbb16e074?auto=format&fit=crop&w=1000&q=80',
+          'Préparation cutanée aseptique et dispositifs stériles à usage unique pour chaque acte de mésothérapie ou biopsie.',
       },
       {
-        id: 'derma-gal-3',
-        title: 'Espace Accueil & Confort Patient',
+        id: 'derma-pillar-3',
+        badge: 'Phototypes',
+        title: 'Suivi Patient Personnalisé',
         description:
-          'Cabinet calme à éclairage naturel dédié au diagnostic cutané et au suivi personnalisé.',
-        imageUrl:
-          'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1000&q=80',
+          'Ordonnances dermo-cosmétiques et protocoles médicaux calibrés spécifiquement pour les peaux méditerranéennes.',
+      },
+    ],
+    faqs: [
+      {
+        id: 'derma-faq-1',
+        question: 'Dois-je venir démaquillée pour une consultation dermatologique ?',
+        answer:
+          'Oui, un visage parfaitement démaquillé permet une analyse fiable de la texture cutanée, des taches pigmentaires et des grains de beauté à la loupe dermatoscopique.',
+      },
+      {
+        id: 'derma-faq-2',
+        question: 'Combien de séances de PRP capillaire sont recommandées ?',
+        answer:
+          'Un protocole d’attaque comprend généralement 3 séances espacées de 4 semaines, suivies d’une séance d’entretien semestrielle selon les résultats de la trichoscopie.',
+      },
+      {
+        id: 'derma-faq-3',
+        question: 'Faut-il apporter mes anciennes ordonnances et crèmes ?',
+        answer:
+          'Oui, apportez la liste ou les photos des traitements utilisés ces 3 derniers mois afin d’éviter les doublons d’actifs irritants et d’adapter votre protocole.',
       },
     ],
     prepProtocolTitle: 'Recommandations avant examen cutané',
@@ -564,7 +610,7 @@ export const VERTICAL_PROFILES: Record<VerticalType, VerticalProfile> = {
         patientName: 'Karim Mansouri',
         patientPhone: '0558 90 27 11',
         serviceId: 'derma-naevus',
-        serviceTitle: 'Contrôle Grains de beauté',
+        serviceTitle: 'Allergie, Eczéma & Grains de beauté',
         priceDa: 4000,
         detailLabel: 'Premier bilan dermatologique',
         status: 'Confirmé',
@@ -583,14 +629,19 @@ export const VERTICAL_PROFILES: Record<VerticalType, VerticalProfile> = {
       heroSubtitle:
         'Suivez l’affluence du cabinet en direct, précisez la nature de votre visite et recevez la liste exacte des examens à apporter.',
       hoursLabel: 'Sam - Jeu : 08h30 - 17h30',
+      isDark: false,
       bgCanvas: 'bg-[#F8FAFC]',
       bgSurface: 'bg-white',
       bgSubtle: 'bg-[#EFF6FF]',
+      inputBg: 'bg-[#F8FAFC]',
+      bookedSlotClass: 'bg-slate-100 border-slate-200 text-slate-400 cursor-not-allowed',
+      imagePlaceholderBg: 'bg-[#EFF6FF]',
       textPrimary: 'text-[#0F172A]',
       textSecondary: 'text-[#334155]',
       textMuted: 'text-[#64748B]',
       accentBg: 'bg-[#1E3A8A]',
       accentHoverBg: 'hover:bg-[#172554]',
+      accentButtonText: 'text-white',
       accentText: 'text-[#1E3A8A]',
       accentBorder: 'border-[#1E3A8A]',
       accentSoftBg: 'bg-[#EFF6FF]',
@@ -618,49 +669,76 @@ export const VERTICAL_PROFILES: Record<VerticalType, VerticalProfile> = {
       },
       {
         id: 'doc-controle',
-        title: 'Contrôle / Lecture de bilan',
+        title: 'Contrôle & Lecture de bilan',
         subtitle: 'Interprétation des analyses sanguines, imagerie et ajustement du traitement',
         durationMin: 20,
         priceDa: 2500,
         imageUrl:
-          'https://images.unsplash.com/photo-1758691462123-8a17ae95d203?auto=format&fit=crop&w=900&q=80',
+          'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=900&q=80',
         category: 'Suivi médical',
       },
       {
         id: 'doc-exploration',
-        title: 'Acte & Exploration',
+        title: 'Échographie & Exploration',
         subtitle: 'Échographie ciblée, ECG ou exploration fonctionnelle au cabinet',
         durationMin: 40,
         priceDa: 5500,
         imageUrl:
-          'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=900&q=80',
+          'https://images.unsplash.com/photo-1581595220892-b0739db3ba8c?auto=format&fit=crop&w=900&q=80',
         category: 'Plateau technique',
       },
+      {
+        id: 'doc-suivi',
+        title: 'Suivi Chronique & Certificats',
+        subtitle: 'Renouvellement de traitement au long cours, tension artérielle & dossier',
+        durationMin: 25,
+        priceDa: 3000,
+        imageUrl:
+          'https://images.unsplash.com/photo-1758691462123-8a17ae95d203?auto=format&fit=crop&w=900&q=80',
+        category: 'Médecine continue',
+      },
     ],
-    gallery: [
+    trustPillars: [
       {
-        id: 'doc-gal-1',
-        title: 'Équipements Médicaux de Pointe',
+        id: 'doctor-pillar-1',
+        badge: 'Explorations',
+        title: 'Plateau Technique Certifié',
         description:
-          'Plateau d’exploration clinique équipé d’échographe haute précision et d’électrocardiographe numérique.',
-        imageUrl:
-          'https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1000&q=80',
+          'Échographe haute résolution, électrocardiographe numérique 12 dérivations et monitoring tensionnel au cabinet.',
       },
       {
-        id: 'doc-gal-2',
-        title: "Protocoles d'Hygiène & Stérilisation",
+        id: 'doctor-pillar-2',
+        badge: 'Protocoles',
+        title: 'Hygiène & Stérilisation stricte',
         description:
-          'Contrôle rigoureux des surfaces cliniques et matériel stérile conforme aux protocoles hospitaliers.',
-        imageUrl:
-          'https://images.unsplash.com/photo-1578496781481-cfbd89f9aca8?auto=format&fit=crop&w=1000&q=80',
+          'Désinfection médicale systématique entre chaque patient et respect rigoureux du secret professionnel.',
       },
       {
-        id: 'doc-gal-3',
-        title: 'Espace Accueil & Confort Patient',
+        id: 'doctor-pillar-3',
+        badge: 'Ponctualité',
+        title: 'Suivi Patient Personnalisé',
         description:
-          'Salle d’attente régulée par rendez-vous horaires afin d’éviter toute attente prolongée.',
-        imageUrl:
-          'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1000&q=80',
+          'Dossier médical numérisé avec créneaux régulés à l’avance pour limiter l’attente en salle à environ 10 minutes.',
+      },
+    ],
+    faqs: [
+      {
+        id: 'doctor-faq-1',
+        question: 'Quels documents dois-je apporter lors d’une première consultation ?',
+        answer:
+          'Apportez vos dernières analyses biologiques (FNS, glycémie, bilan lipidique), vos ordonnances en cours et vos comptes-rendus ou clichés d’imagerie récents.',
+      },
+      {
+        id: 'doctor-faq-2',
+        question: 'L’échographie ou l’ECG peuvent-ils être réalisés le même jour ?',
+        answer:
+          'Oui, en sélectionnant le motif « Échographie & Exploration », un créneau élargi de 40 minutes est réservé pour réaliser l’acte et son compte-rendu sur place.',
+      },
+      {
+        id: 'doctor-faq-3',
+        question: 'Comment fonctionne la régulation de la salle d’attente ?',
+        answer:
+          'Chaque patient dispose d’un horaire précis confirmé par référence dossier et rappel WhatsApp, évitant les files d’attente dès l’ouverture.',
       },
     ],
     prepProtocolTitle: 'Documents à apporter impérativement',
@@ -699,7 +777,7 @@ export const VERTICAL_PROFILES: Record<VerticalType, VerticalProfile> = {
         patientName: 'Yacine Khelifi',
         patientPhone: '0662 71 04 55',
         serviceId: 'doc-controle',
-        serviceTitle: 'Contrôle / Lecture de bilan',
+        serviceTitle: 'Contrôle & Lecture de bilan',
         priceDa: 2500,
         detailLabel: 'Analyses & ordonnances',
         status: 'En attente',
@@ -713,7 +791,7 @@ export const VERTICAL_PROFILES: Record<VerticalType, VerticalProfile> = {
         patientName: 'Meriem Boudiaf',
         patientPhone: '0770 19 63 40',
         serviceId: 'doc-exploration',
-        serviceTitle: 'Acte & Exploration',
+        serviceTitle: 'Échographie & Exploration',
         priceDa: 5500,
         detailLabel: 'Imagerie & bilan requis',
         status: 'Confirmé',
@@ -726,9 +804,9 @@ export const VERTICAL_PROFILES: Record<VerticalType, VerticalProfile> = {
         time: '10:00',
         patientName: 'Karim Mansouri',
         patientPhone: '0558 90 27 11',
-        serviceId: 'doc-controle',
-        serviceTitle: 'Contrôle / Lecture de bilan',
-        priceDa: 2500,
+        serviceId: 'doc-suivi',
+        serviceTitle: 'Suivi Chronique & Certificats',
+        priceDa: 3000,
         detailLabel: 'Suivi trimestriel',
         status: 'Confirmé',
         createdAt: '2026-11-24T16:50:00Z',

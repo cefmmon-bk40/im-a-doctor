@@ -28,11 +28,11 @@ export function ResilientImage({
   if (hasError || !src) {
     const gradient =
       vertical === 'laser'
-        ? 'linear-gradient(135deg, #141414 0%, #3A3020 100%)'
+        ? 'linear-gradient(135deg, #0B0B0E 0%, #3A2E1A 100%)'
         : vertical === 'dental'
         ? 'linear-gradient(135deg, #0F172A 0%, #0D9488 100%)'
         : vertical === 'derma'
-        ? 'linear-gradient(135deg, #064E3B 0%, #059669 100%)'
+        ? 'linear-gradient(135deg, #064E3B 0%, #047857 100%)'
         : 'linear-gradient(135deg, #0F172A 0%, #1E3A8A 100%)';
 
     return (

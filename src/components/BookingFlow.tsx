@@ -245,7 +245,7 @@ export function BookingFlow({
               <span>Afficher les tarifs (DA)</span>
               <span
                 className={`w-8 h-4.5 rounded-full p-0.5 transition-colors flex items-center ${
-                  showPrices ? theme.accentBg : 'bg-slate-300'
+                  showPrices ? theme.accentBg : theme.isDark ? 'bg-[#2A2A35]' : 'bg-slate-300'
                 }`}
               >
                 <span
@@ -264,10 +264,10 @@ export function BookingFlow({
             data-testid="booking-confirmation-ticket"
             className={`max-w-3xl mx-auto rounded-2xl border p-6 sm:p-8 space-y-6 ${theme.bgSurface} ${theme.borderHairline} shadow-sm`}
           >
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5 border-b border-dashed border-slate-300">
+            <div className={`flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5 border-b border-dashed ${theme.borderHairline}`}>
               <div className="flex items-center gap-3">
                 <div
-                  className={`w-11 h-11 rounded-xl flex items-center justify-center text-white shrink-0 ${theme.accentBg}`}
+                  className={`w-11 h-11 rounded-xl flex items-center justify-center shrink-0 ${theme.accentBg} ${theme.accentButtonText}`}
                 >
                   <CheckCircle2 className="w-6 h-6" aria-hidden="true" />
                 </div>
@@ -338,15 +338,13 @@ export function BookingFlow({
             <div
               className={`p-4 sm:p-5 rounded-xl border ${
                 config.type === 'laser'
-                  ? 'bg-[#C5A059]/12 border-[#C5A059] text-[#141414]'
+                  ? 'bg-[#C5A059]/15 border-[#C5A059]/60 text-[#F8FAFC]'
                   : `${theme.accentSoftBg} ${theme.borderHairline} ${theme.textPrimary}`
               }`}
             >
               <div className="flex items-start gap-3">
                 <Sparkles
-                  className={`w-5 h-5 shrink-0 mt-0.5 ${
-                    config.type === 'laser' ? 'text-[#8C6D2E]' : theme.accentText
-                  }`}
+                  className={`w-5 h-5 shrink-0 mt-0.5 ${theme.accentText}`}
                   aria-hidden="true"
                 />
                 <div className="space-y-1">
@@ -413,10 +411,10 @@ export function BookingFlow({
                       }}
                       className={`py-2.5 px-1.5 sm:px-4 rounded-lg text-[11px] sm:text-sm font-semibold transition-all duration-200 flex items-center justify-center gap-1 min-w-0 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed ${
                         isCurrent
-                          ? `${theme.accentBg} text-white`
+                          ? `${theme.accentBg} ${theme.accentButtonText}`
                           : isCompleted
                           ? `${theme.accentSoftBg} ${theme.accentSoftText}`
-                          : `${theme.textMuted} hover:${theme.textPrimary}`
+                          : `${theme.textMuted} hover:opacity-90`
                       }`}
                     >
                       {isCompleted && <Check className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />}
@@ -447,7 +445,7 @@ export function BookingFlow({
                     <button
                       type="button"
                       onClick={handleGoToStep2}
-                      className={`inline-flex items-center gap-2 px-6 py-3.5 rounded-lg text-sm font-semibold text-white transition-all duration-200 cursor-pointer whitespace-nowrap ${theme.accentBg} ${theme.accentHoverBg}`}
+                      className={`inline-flex items-center gap-2 px-6 py-3.5 rounded-lg text-sm font-semibold transition-all duration-200 cursor-pointer whitespace-nowrap ${theme.accentBg} ${theme.accentHoverBg} ${theme.accentButtonText}`}
                     >
                       <span>Choisir la date et l’heure</span>
                       <ArrowRight className="w-4 h-4" aria-hidden="true" />
@@ -487,13 +485,13 @@ export function BookingFlow({
                             onClick={() => handleSelectDate(day.isoDate)}
                             className={`shrink-0 min-w-[100px] sm:flex-1 p-3 rounded-xl border text-center transition-all duration-200 cursor-pointer ${
                               isSelected
-                                ? `${theme.accentBg} text-white border-transparent shadow-sm`
+                                ? `${theme.accentBg} ${theme.accentButtonText} border-transparent shadow-sm`
                                 : `${theme.bgCanvas} ${theme.borderHairline} ${theme.textPrimary} hover:opacity-85`
                             }`}
                           >
                             <span
                               className={`block text-xs font-medium ${
-                                isSelected ? 'text-white/80' : theme.textMuted
+                                isSelected ? 'opacity-80' : theme.textMuted
                               }`}
                             >
                               {day.shortDay}
@@ -503,7 +501,7 @@ export function BookingFlow({
                             </span>
                             <span
                               className={`block text-[11px] font-medium whitespace-nowrap ${
-                                isSelected ? 'text-white' : theme.textSecondary
+                                isSelected ? 'opacity-95' : theme.textSecondary
                               }`}
                             >
                               {day.label === "Aujourd'hui" || day.label === 'Demain'
@@ -547,22 +545,26 @@ export function BookingFlow({
                             }}
                             className={`py-3.5 px-4 rounded-xl border text-sm font-semibold tabular-nums transition-all duration-200 flex items-center justify-between gap-2 ${
                               booked
-                                ? 'bg-slate-100 border-slate-200 text-slate-400 cursor-not-allowed'
+                                ? theme.bookedSlotClass
                                 : isSelected
-                                ? `${theme.accentBg} text-white border-transparent shadow-sm cursor-pointer`
+                                ? `${theme.accentBg} ${theme.accentButtonText} border-transparent shadow-sm cursor-pointer`
                                 : `${theme.bgCanvas} ${theme.borderHairline} ${theme.textPrimary} hover:opacity-85 cursor-pointer`
                             }`}
                           >
                             <span>{slot}</span>
                             {booked ? (
-                              <span className="inline-flex items-center gap-1 text-xs font-medium text-slate-500">
+                              <span
+                                className={`inline-flex items-center gap-1 text-xs font-medium ${
+                                  theme.isDark ? 'text-[#64748B]' : 'text-slate-500'
+                                }`}
+                              >
                                 <Lock className="w-3 h-3" aria-hidden="true" />
                                 Complet
                               </span>
                             ) : (
                               <span
                                 className={`text-xs font-medium ${
-                                  isSelected ? 'text-white/90' : theme.accentText
+                                  isSelected ? 'opacity-90' : theme.accentText
                                 }`}
                               >
                                 {isSelected ? 'Choisi' : 'Libre'}
@@ -574,7 +576,12 @@ export function BookingFlow({
                     </div>
 
                     {slotError && (
-                      <p role="alert" className="text-xs font-medium text-rose-700 pt-1">
+                      <p
+                        role="alert"
+                        className={`text-xs font-medium pt-1 ${
+                          theme.isDark ? 'text-rose-400' : 'text-rose-700'
+                        }`}
+                      >
                         {slotError}
                       </p>
                     )}
@@ -593,7 +600,7 @@ export function BookingFlow({
                     <button
                       type="button"
                       onClick={handleGoToStep3}
-                      className={`inline-flex items-center gap-2 px-6 py-3.5 rounded-lg text-sm font-semibold text-white transition-all duration-200 cursor-pointer whitespace-nowrap ${theme.accentBg} ${theme.accentHoverBg}`}
+                      className={`inline-flex items-center gap-2 px-6 py-3.5 rounded-lg text-sm font-semibold transition-all duration-200 cursor-pointer whitespace-nowrap ${theme.accentBg} ${theme.accentHoverBg} ${theme.accentButtonText}`}
                     >
                       <span>Continuer vers vos coordonnées</span>
                       <ArrowRight className="w-4 h-4" aria-hidden="true" />
@@ -640,12 +647,17 @@ export function BookingFlow({
                             setFormErrors((prev) => ({ ...prev, name: undefined }));
                           }
                         }}
-                        className={`w-full px-3.5 py-2.5 rounded-lg border text-sm outline-none transition-colors ${theme.bgCanvas} ${
-                          formErrors.name ? 'border-rose-600' : theme.borderHairline
-                        } ${theme.textPrimary}`}
+                        className={`w-full px-3.5 py-2.5 rounded-lg border text-sm outline-none transition-colors ${theme.inputBg} ${
+                          formErrors.name ? 'border-rose-500' : theme.borderHairline
+                        } ${theme.textPrimary} placeholder:text-[#64748B]`}
                       />
                       {formErrors.name && (
-                        <p role="alert" className="text-xs text-rose-700 font-medium">
+                        <p
+                          role="alert"
+                          className={`text-xs font-medium ${
+                            theme.isDark ? 'text-rose-400' : 'text-rose-700'
+                          }`}
+                        >
                           {formErrors.name}
                         </p>
                       )}
@@ -670,12 +682,17 @@ export function BookingFlow({
                             setFormErrors((prev) => ({ ...prev, phone: undefined }));
                           }
                         }}
-                        className={`w-full px-3.5 py-2.5 rounded-lg border text-sm tabular-nums outline-none transition-colors ${theme.bgCanvas} ${
-                          formErrors.phone ? 'border-rose-600' : theme.borderHairline
-                        } ${theme.textPrimary}`}
+                        className={`w-full px-3.5 py-2.5 rounded-lg border text-sm tabular-nums outline-none transition-colors ${theme.inputBg} ${
+                          formErrors.phone ? 'border-rose-500' : theme.borderHairline
+                        } ${theme.textPrimary} placeholder:text-[#64748B]`}
                       />
                       {formErrors.phone && (
-                        <p role="alert" className="text-xs text-rose-700 font-medium">
+                        <p
+                          role="alert"
+                          className={`text-xs font-medium ${
+                            theme.isDark ? 'text-rose-400' : 'text-rose-700'
+                          }`}
+                        >
                           {formErrors.phone}
                         </p>
                       )}
@@ -695,7 +712,7 @@ export function BookingFlow({
                       placeholder="Précisez une allergie, un traitement en cours ou une demande particulière..."
                       value={medicalNote}
                       onChange={(e) => setMedicalNote(e.target.value)}
-                      className={`w-full px-3.5 py-2.5 rounded-lg border text-sm outline-none transition-colors ${theme.bgCanvas} ${theme.borderHairline} ${theme.textPrimary}`}
+                      className={`w-full px-3.5 py-2.5 rounded-lg border text-sm outline-none transition-colors ${theme.inputBg} ${theme.borderHairline} ${theme.textPrimary} placeholder:text-[#64748B]`}
                     />
                   </div>
 
@@ -711,7 +728,7 @@ export function BookingFlow({
 
                     <button
                       type="submit"
-                      className={`inline-flex items-center gap-2 px-6 py-3.5 rounded-lg text-sm font-semibold text-white transition-all duration-200 cursor-pointer whitespace-nowrap ${theme.accentBg} ${theme.accentHoverBg}`}
+                      className={`inline-flex items-center gap-2 px-6 py-3.5 rounded-lg text-sm font-semibold transition-all duration-200 cursor-pointer whitespace-nowrap ${theme.accentBg} ${theme.accentHoverBg} ${theme.accentButtonText}`}
                     >
                       <CheckCircle2 className="w-4 h-4" aria-hidden="true" />
                       <span>Confirmer le rendez-vous</span>
@@ -766,7 +783,9 @@ export function BookingFlow({
                   </div>
 
                   {showPrices && (
-                    <div className="flex items-baseline justify-between gap-3 pt-2 border-t border-dashed border-slate-200">
+                    <div
+                      className={`flex items-baseline justify-between gap-3 pt-2 border-t border-dashed ${theme.borderHairline}`}
+                    >
                       <span className={`font-medium ${theme.textSecondary}`}>Tarif indicatif</span>
                       <span className={`text-lg font-bold tabular-nums ${theme.textPrimary}`}>
                         {formatPriceDa(effectivePriceDa)}
@@ -805,7 +824,7 @@ export function BookingFlow({
           <button
             type="button"
             onClick={handleMobilePrimaryAdvance}
-            className={`px-4 py-2.5 rounded-lg text-xs font-semibold text-white whitespace-nowrap shrink-0 cursor-pointer ${theme.accentBg}`}
+            className={`px-4 py-2.5 rounded-lg text-xs font-semibold whitespace-nowrap shrink-0 cursor-pointer ${theme.accentBg} ${theme.accentButtonText}`}
           >
             {step === 1 ? 'Date & Heure' : step === 2 ? 'Coordonnées' : 'Confirmer RDV'}
           </button>

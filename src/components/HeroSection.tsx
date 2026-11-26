@@ -73,7 +73,7 @@ export function HeroSection({ config, profile, onStartBooking }: HeroSectionProp
                 <button
                   type="button"
                   onClick={onStartBooking}
-                  className={`inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-lg text-sm font-semibold text-white transition-all duration-200 cursor-pointer whitespace-nowrap shrink-0 focus-visible:outline-2 focus-visible:outline-offset-2 ${theme.accentBg} ${theme.accentHoverBg}`}
+                  className={`inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-lg text-sm font-semibold transition-all duration-200 cursor-pointer whitespace-nowrap shrink-0 focus-visible:outline-2 focus-visible:outline-offset-2 ${theme.accentBg} ${theme.accentHoverBg} ${theme.accentButtonText}`}
                 >
                   <CalendarCheck className="w-4 h-4" aria-hidden="true" />
                   <span>Prendre Rendez-vous en 30 sec</span>
