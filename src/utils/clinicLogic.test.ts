@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {
   buildReceptionGpsWhatsAppUrl,
   buildReceptionReminderWhatsAppUrl,
+  calculateComparisonPercentFromPointer,
   calculateLaserPrice,
   formatPhoneForWhatsApp,
   formatPriceDa,
@@ -159,6 +160,14 @@ test('all 4 verticals have symmetrical grids and 22 strictly unique photo URLs',
       allPhotoUrls.push(service.imageUrl);
     }
     assert.equal(vertical.trustPillars.length, 3);
+    assert.equal(vertical.beforeAfterCases.length, 2);
+    for (const ba of vertical.beforeAfterCases) {
+      assert.ok(ba.tabLabel.length > 0);
+      assert.ok(ba.title.length > 0);
+      assert.ok(ba.durationMeta.length > 0);
+      assert.ok(ba.beforeImageUrl.length > 0);
+      assert.ok(ba.afterImageUrl.length > 0);
+    }
     assert.equal(vertical.faqs.length, 3);
   }
 
@@ -166,4 +175,13 @@ test('all 4 verticals have symmetrical grids and 22 strictly unique photo URLs',
   const normalizePhotoId = (url: string) => url.split('?')[0];
   assert.equal(new Set(allPhotoUrls.map(normalizePhotoId)).size, 22);
 });
+
+test('calculateComparisonPercentFromPointer clamps pointer coordinates smoothly', () => {
+  assert.equal(calculateComparisonPercentFromPointer(150, 100, 200), 25);
+  assert.equal(calculateComparisonPercentFromPointer(200, 100, 200), 50);
+  assert.equal(calculateComparisonPercentFromPointer(90, 100, 200), 5);
+  assert.equal(calculateComparisonPercentFromPointer(400, 100, 200), 95);
+  assert.equal(calculateComparisonPercentFromPointer(100, 100, 0), 50);
+});
+
 

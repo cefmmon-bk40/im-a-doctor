@@ -123,6 +123,30 @@ export const VERTICAL_PROFILES: Record<VerticalType, VerticalProfile> = {
           'Paramétrage précis selon votre phototype et suivi évolutif de la densité pilaire et de la tolérance cutanée.',
       },
     ],
+    beforeAfterCases: [
+      {
+        id: 'laser-case-epilation',
+        tabLabel: 'Épilation Laser Définitive',
+        title: 'Épilation Laser Définitive — Jambes & Bras',
+        caption: 'Peau lisse sans repousse ni irritation post-rasage · Protocole Alexandrite',
+        durationMeta: 'Séance : 45 min • Résultat après 4 séances',
+        beforeImageUrl: '/src/assets/images/laser_epilation_result_1795839699201.jpg',
+        afterImageUrl: '/src/assets/images/laser_epilation_result_1795839699201.jpg',
+        beforeFilter: 'brightness(0.82) contrast(0.9) saturate(0.75) sepia(0.18)',
+        afterFilter: 'brightness(1.06) contrast(1.05) saturate(1.06)',
+      },
+      {
+        id: 'laser-case-rajeunissement',
+        tabLabel: 'Rajeunissement & Éclat du Visage',
+        title: 'Rajeunissement & Éclat du Visage',
+        caption: 'Unification du teint, grain de peau affiné et fermeté restaurée',
+        durationMeta: 'Séance : 40 min • Résultat après 2 séances',
+        beforeImageUrl: '/src/assets/images/laser_rejuvenation_result_1795839699834.jpg',
+        afterImageUrl: '/src/assets/images/laser_rejuvenation_result_1795839699834.jpg',
+        beforeFilter: 'brightness(0.84) contrast(0.88) saturate(0.72) sepia(0.22)',
+        afterFilter: 'brightness(1.05) contrast(1.06) saturate(1.04)',
+      },
+    ],
     faqs: [
       {
         id: 'laser-faq-1',
@@ -331,6 +355,30 @@ export const VERTICAL_PROFILES: Record<VerticalType, VerticalProfile> = {
           'Créneaux dédiés aux douleurs aiguës et plans de traitement détaillés remis par écrit dès la première visite.',
       },
     ],
+    beforeAfterCases: [
+      {
+        id: 'dental-case-whitening',
+        tabLabel: 'Blanchiment Dentaire LED',
+        title: 'Blanchiment Dentaire LED Haute Précision',
+        caption: 'Gain jusqu’à 4 teintes sur l’émail naturel sans sensibilité post-acte',
+        durationMeta: 'Séance : 45 min • Résultat après 1 séance',
+        beforeImageUrl: '/src/assets/images/dental_whitening_result_1795839697561.jpg',
+        afterImageUrl: '/src/assets/images/dental_whitening_result_1795839697561.jpg',
+        beforeFilter: 'sepia(0.36) saturate(1.35) brightness(0.89) contrast(0.95)',
+        afterFilter: 'brightness(1.06) contrast(1.04) saturate(0.95)',
+      },
+      {
+        id: 'dental-case-aligners',
+        tabLabel: 'Aligneurs Invisibles & Esthétique',
+        title: 'Aligneurs Invisibles & Esthétique du Sourire',
+        caption: 'Réalignement progressif discret guidé par empreinte optique 3D',
+        durationMeta: 'Contrôle : 20 min • Résultat après 6 mois',
+        beforeImageUrl: '/src/assets/images/dental_aligners_result_1795839698820.jpg',
+        afterImageUrl: '/src/assets/images/dental_aligners_result_1795839698820.jpg',
+        beforeFilter: 'sepia(0.26) saturate(1.18) brightness(0.88) contrast(0.94)',
+        afterFilter: 'brightness(1.05) contrast(1.05) saturate(1.0)',
+      },
+    ],
     faqs: [
       {
         id: 'dental-faq-1',
@@ -526,6 +574,30 @@ export const VERTICAL_PROFILES: Record<VerticalType, VerticalProfile> = {
           'Ordonnances dermo-cosmétiques et protocoles médicaux calibrés spécifiquement pour les peaux méditerranéennes.',
       },
     ],
+    beforeAfterCases: [
+      {
+        id: 'derma-case-acne',
+        tabLabel: 'Traitement Acné & Cicatrices',
+        title: 'Traitement Acné & Cicatrices Post-Inflammatoires',
+        caption: 'Réduction des rougeurs actives et lissage progressif du relief cutané',
+        durationMeta: 'Séance : 35 min • Résultat après 3 séances',
+        beforeImageUrl: '/src/assets/images/derma_acne_result_1795839700318.jpg',
+        afterImageUrl: '/src/assets/images/derma_acne_result_1795839700318.jpg',
+        beforeFilter: 'sepia(0.24) saturate(1.25) brightness(0.87) contrast(1.08)',
+        afterFilter: 'brightness(1.04) contrast(1.02) saturate(0.98)',
+      },
+      {
+        id: 'derma-case-peeling',
+        tabLabel: 'Peeling & Hydratation Profonde',
+        title: 'Peeling Médical & Hydratation Profonde',
+        caption: 'Atténuation des taches pigmentaires et barrière cutanée rééquilibrée',
+        durationMeta: 'Séance : 30 min • Résultat après 2 séances',
+        beforeImageUrl: '/src/assets/images/derma_peeling_result_1795839699876.jpg',
+        afterImageUrl: '/src/assets/images/derma_peeling_result_1795839699876.jpg',
+        beforeFilter: 'sepia(0.26) saturate(0.82) brightness(0.86) contrast(0.94)',
+        afterFilter: 'brightness(1.05) contrast(1.04) saturate(1.02)',
+      },
+    ],
     faqs: [
       {
         id: 'derma-faq-1',
@@ -719,6 +791,34 @@ export const VERTICAL_PROFILES: Record<VerticalType, VerticalProfile> = {
         title: 'Suivi Patient Personnalisé',
         description:
           'Dossier médical numérisé avec créneaux régulés à l’avance pour limiter l’attente en salle à environ 10 minutes.',
+      },
+    ],
+    beforeAfterCases: [
+      {
+        id: 'doctor-case-suivi',
+        tabLabel: 'Suivi & Bilan Personnalisé',
+        title: 'Suivi & Bilan Clinique Personnalisé',
+        caption: 'Interprétation structurée des examens biologiques et d’imagerie médicale',
+        durationMeta: 'Consultation : 30 min • Suivi à 6 semaines',
+        beforeImageUrl:
+          'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1200&q=80',
+        afterImageUrl:
+          'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1200&q=80',
+        beforeFilter: 'grayscale(0.45) brightness(0.84) contrast(0.92)',
+        afterFilter: 'brightness(1.06) contrast(1.06) saturate(1.08)',
+      },
+      {
+        id: 'doctor-case-recuperation',
+        tabLabel: 'Protocole de Soins & Récupération',
+        title: 'Protocole de Soins & Récupération Fonctionnelle',
+        caption: 'Plan thérapeutique coordonné et réévaluation clinique au cabinet',
+        durationMeta: 'Séance : 40 min • Bilan après 2 consultations',
+        beforeImageUrl:
+          'https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=1200&q=80',
+        afterImageUrl:
+          'https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=1200&q=80',
+        beforeFilter: 'sepia(0.22) saturate(0.75) brightness(0.84) contrast(0.93)',
+        afterFilter: 'brightness(1.05) contrast(1.05) saturate(1.06)',
       },
     ],
     faqs: [

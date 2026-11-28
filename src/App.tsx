@@ -12,6 +12,7 @@ import { Header } from './components/Header';
 import { HeroSection } from './components/HeroSection';
 import { BookingFlow } from './components/BookingFlow';
 import { MedicalCommitmentsSection } from './components/MedicalCommitmentsSection';
+import { BeforeAfterSection } from './components/BeforeAfterSection';
 import { FaqSection } from './components/FaqSection';
 import { ClinicInfoSection } from './components/ClinicInfoSection';
 import { Footer } from './components/Footer';
@@ -134,6 +135,14 @@ export default function App() {
         <MedicalCommitmentsSection
           theme={theme}
           pillars={profile.trustPillars}
+        />
+
+        <BeforeAfterSection
+          key={`ba-${config.type}`}
+          vertical={config.type}
+          theme={theme}
+          cases={profile.beforeAfterCases}
+          onStartBooking={scrollToBooking}
         />
 
         <FaqSection key={`faq-${config.type}`} theme={theme} faqs={profile.faqs} />

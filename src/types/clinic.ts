@@ -35,6 +35,18 @@ export interface FaqItem {
   answer: string;
 }
 
+export interface BeforeAfterCase {
+  id: string;
+  tabLabel: string;
+  title: string;
+  caption: string;
+  durationMeta: string;
+  beforeImageUrl: string;
+  afterImageUrl: string;
+  beforeFilter: string;
+  afterFilter: string;
+}
+
 export interface WorkingDay {
   isoDate: string; // YYYY-MM-DD
   label: string; // "Aujourd'hui", "Demain", or "Sam 28 Nov"
@@ -100,6 +112,7 @@ export interface VerticalProfile {
   heroImageAlt: string;
   services: ServiceOption[];
   trustPillars: TrustPillar[];
+  beforeAfterCases: BeforeAfterCase[];
   faqs: FaqItem[];
   prepProtocolTitle: string;
   prepProtocolBody: string;
