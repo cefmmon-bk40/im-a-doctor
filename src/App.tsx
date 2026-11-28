@@ -40,11 +40,25 @@ export default function App() {
     document.title = `${config.name} — ${theme.specialtyTitle}`;
   }, [config.name, theme.specialtyTitle]);
 
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const handlePopState = () => {
+      setConfig(parseClinicConfigFromSearch(window.location.search));
+    };
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
   const handleSelectAgencyType = (nextType: VerticalType) => {
     setConfig((prev) => ({ ...prev, type: nextType }));
     if (typeof window !== 'undefined') {
       const params = new URLSearchParams(window.location.search);
-      params.set('type', nextType);
+      if (params.has('profile')) {
+        params.set('profile', nextType);
+      }
+      if (params.has('type') || !params.has('profile')) {
+        params.set('type', nextType);
+      }
       const nextUrl = `${window.location.pathname}?${params.toString()}`;
       window.history.replaceState(null, '', nextUrl);
     }

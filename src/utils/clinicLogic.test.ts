@@ -32,6 +32,16 @@ test('parseClinicConfigFromSearch parses defaults and overrides correctly', () =
 
   const unknownType = parseClinicConfigFromSearch('?type=invalid');
   assert.equal(unknownType.type, 'laser');
+
+  const profileAndClinic = parseClinicConfigFromSearch(
+    '?profile=dental&clinic=Clinic%20Name'
+  );
+  assert.equal(profileAndClinic.type, 'dental');
+  assert.equal(profileAndClinic.name, 'Clinic Name');
+
+  assert.equal(parseClinicConfigFromSearch('?profile=laser').type, 'laser');
+  assert.equal(parseClinicConfigFromSearch('?profile=derma').type, 'derma');
+  assert.equal(parseClinicConfigFromSearch('?profile=doctor').type, 'doctor');
 });
 
 test('isValidAlgerianPhone validates 05/06/07 numbers and rejects invalid formats', () => {

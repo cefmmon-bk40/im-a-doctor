@@ -36,12 +36,12 @@ export const DEFAULT_CLINIC_CONFIG: ClinicConfig = {
 
 export function parseClinicConfigFromSearch(search: string): ClinicConfig {
   const params = new URLSearchParams(search);
-  const rawType = (params.get('type') || '').trim().toLowerCase();
+  const rawType = (params.get('profile') || params.get('type') || '').trim().toLowerCase();
   const type: VerticalType = VALID_VERTICALS.includes(rawType as VerticalType)
     ? (rawType as VerticalType)
     : DEFAULT_CLINIC_CONFIG.type;
 
-  const rawName = (params.get('name') || '').trim();
+  const rawName = (params.get('clinic') || params.get('name') || '').trim();
   const rawCity = (params.get('city') || '').trim();
   const rawPhone = (params.get('phone') || '').trim();
   const rawDemo = (params.get('demo') || '').trim().toLowerCase();
