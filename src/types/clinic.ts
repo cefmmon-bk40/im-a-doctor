@@ -35,16 +35,25 @@ export interface FaqItem {
   answer: string;
 }
 
+export type ClinicalRetouchPreset =
+  | 'dental-whitening'
+  | 'dental-alignment'
+  | 'laser-epilation'
+  | 'laser-rejuvenation'
+  | 'derma-acne'
+  | 'derma-melasma'
+  | 'doctor-inflammation'
+  | 'doctor-recovery';
+
 export interface BeforeAfterCase {
   id: string;
   tabLabel: string;
   title: string;
   caption: string;
   durationMeta: string;
-  beforeImageUrl: string;
-  afterImageUrl: string;
-  beforeFilter: string;
-  afterFilter: string;
+  beforeImage: string;
+  afterImage: string;
+  retouchPreset?: ClinicalRetouchPreset;
 }
 
 export interface WorkingDay {

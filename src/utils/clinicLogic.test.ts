@@ -146,6 +146,7 @@ test('WhatsApp automation URLs include encoded patient details and 213 number', 
 });
 
 import { VERTICAL_PROFILES } from '../data/verticals';
+import { computeLocalizedZoneMaskWeight } from './clinicalRetouch';
 
 test('all 4 verticals have symmetrical grids and 22 strictly unique photo URLs', () => {
   assert.equal(VERTICAL_PROFILES.laser.services.length, 6);
@@ -165,8 +166,9 @@ test('all 4 verticals have symmetrical grids and 22 strictly unique photo URLs',
       assert.ok(ba.tabLabel.length > 0);
       assert.ok(ba.title.length > 0);
       assert.ok(ba.durationMeta.length > 0);
-      assert.ok(ba.beforeImageUrl.length > 0);
-      assert.ok(ba.afterImageUrl.length > 0);
+      assert.ok(ba.beforeImage.length > 0);
+      assert.ok(ba.afterImage.length > 0);
+      assert.ok(ba.retouchPreset && ba.retouchPreset.length > 0);
     }
     assert.equal(vertical.faqs.length, 3);
   }
@@ -183,5 +185,52 @@ test('calculateComparisonPercentFromPointer clamps pointer coordinates smoothly'
   assert.equal(calculateComparisonPercentFromPointer(400, 100, 200), 95);
   assert.equal(calculateComparisonPercentFromPointer(100, 100, 0), 50);
 });
+
+test('localized clinical masks isolate ONLY target anatomical pixels and preserve background/lips/hair/clothes', () => {
+  // Dental whitening: tooth enamel pixel inside mouth gets > 0.7, pink gum/lip gets 0, corner skin gets 0
+  assert.ok(
+    computeLocalizedZoneMaskWeight('dental-whitening', 0.5, 0.5, 220, 215, 202) > 0.7
+  );
+  assert.equal(
+    computeLocalizedZoneMaskWeight('dental-whitening', 0.5, 0.5, 205, 115, 115),
+    0
+  );
+  assert.equal(
+    computeLocalizedZoneMaskWeight('dental-whitening', 0.05, 0.05, 220, 215, 202),
+    0
+  );
+
+  // Laser epilation: clinic white wall (0.15, 0.2) gets 0, warm leg skin inside capsule gets > 0.7
+  assert.equal(
+    computeLocalizedZoneMaskWeight('laser-epilation', 0.15, 0.2, 235, 236, 234),
+    0
+  );
+  assert.ok(
+    computeLocalizedZoneMaskWeight('laser-epilation', 0.45, 0.58, 198, 152, 122) > 0.7
+  );
+
+  // Derma acne: eye/hair/wall outside cheek gets 0, cheek skin inside zone gets > 0.7
+  assert.equal(
+    computeLocalizedZoneMaskWeight('derma-acne', 0.08, 0.2, 225, 228, 229),
+    0
+  );
+  assert.equal(
+    computeLocalizedZoneMaskWeight('derma-acne', 0.48, 0.22, 42, 32, 30),
+    0
+  );
+  assert.ok(
+    computeLocalizedZoneMaskWeight('derma-acne', 0.52, 0.56, 208, 168, 146) > 0.7
+  );
+
+  // Doctor inflammation: navy scrub pants (0.3, 0.4) get 0, knee joint skin gets > 0.7
+  assert.equal(
+    computeLocalizedZoneMaskWeight('doctor-inflammation', 0.3, 0.4, 24, 40, 72),
+    0
+  );
+  assert.ok(
+    computeLocalizedZoneMaskWeight('doctor-inflammation', 0.52, 0.38, 206, 166, 138) > 0.7
+  );
+});
+
 
 
