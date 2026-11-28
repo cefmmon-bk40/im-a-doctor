@@ -35,15 +35,12 @@ export interface FaqItem {
   answer: string;
 }
 
-export type ClinicalRetouchPreset =
-  | 'dental-whitening'
-  | 'dental-alignment'
-  | 'laser-epilation'
-  | 'laser-rejuvenation'
-  | 'derma-acne'
-  | 'derma-melasma'
-  | 'doctor-inflammation'
-  | 'doctor-recovery';
+export interface CropRect {
+  x: number;
+  y: number;
+  w: number;
+  h: number;
+}
 
 export interface BeforeAfterCase {
   id: string;
@@ -53,7 +50,8 @@ export interface BeforeAfterCase {
   durationMeta: string;
   beforeImage: string;
   afterImage: string;
-  retouchPreset?: ClinicalRetouchPreset;
+  beforeCrop?: CropRect;
+  afterCrop?: CropRect;
 }
 
 export interface WorkingDay {
