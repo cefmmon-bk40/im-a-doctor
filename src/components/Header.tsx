@@ -47,7 +47,7 @@ export function Header({ config, theme, onOpenReception }: HeaderProps) {
             FAQ
           </a>
           <a
-            href="#acces"
+            href="#localisation"
             className="hover:underline underline-offset-4 transition-colors whitespace-nowrap shrink-0"
           >
             Horaires &amp; Accès

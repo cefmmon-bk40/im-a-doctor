@@ -28,7 +28,7 @@ export function Footer({ config, theme }: FooterProps) {
           <a href="#faq" className="hover:underline">
             FAQ
           </a>
-          <a href="#acces" className="hover:underline">
+          <a href="#localisation" className="hover:underline">
             Horaires &amp; Accès
           </a>
         </div>

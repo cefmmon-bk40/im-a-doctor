@@ -35,23 +35,14 @@ export interface FaqItem {
   answer: string;
 }
 
-export interface CropRect {
-  x: number;
-  y: number;
-  w: number;
-  h: number;
-}
-
-export interface BeforeAfterCase {
+export interface PatientReview {
   id: string;
-  tabLabel: string;
-  title: string;
-  caption: string;
-  durationMeta: string;
-  beforeImage: string;
-  afterImage: string;
-  beforeCrop?: CropRect;
-  afterCrop?: CropRect;
+  patientName: string;
+  initials: string;
+  treatmentTag: string;
+  rating: 5;
+  quote: string;
+  verifiedLabel: string;
 }
 
 export interface WorkingDay {
@@ -119,7 +110,7 @@ export interface VerticalProfile {
   heroImageAlt: string;
   services: ServiceOption[];
   trustPillars: TrustPillar[];
-  beforeAfterCases: BeforeAfterCase[];
+  reviews: PatientReview[];
   faqs: FaqItem[];
   prepProtocolTitle: string;
   prepProtocolBody: string;

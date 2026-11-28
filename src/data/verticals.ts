@@ -123,17 +123,36 @@ export const VERTICAL_PROFILES: Record<VerticalType, VerticalProfile> = {
           'Paramétrage précis selon votre phototype et suivi évolutif de la densité pilaire et de la tolérance cutanée.',
       },
     ],
-    beforeAfterCases: [
+    reviews: [
       {
-        id: 'laser-case-epilation',
-        tabLabel: 'Laser Vasculaire & Éclat',
-        title: 'Traitement Laser Vasculaire & Éclat',
-        caption: 'Atténuation visible des rougeurs et unification du teint.',
-        durationMeta: 'Protocole : 3 séances • Peau apaisée',
-        beforeImage: '/images/laser.webp',
-        afterImage: '/images/laser.webp',
-        beforeCrop: { x: 0, y: 0, w: 0.495, h: 1 },
-        afterCrop: { x: 0.505, y: 0, w: 0.495, h: 1 },
+        id: 'laser-rev-1',
+        patientName: 'Lina Meziane',
+        initials: 'LM',
+        treatmentTag: 'Épilation Alexandrite · Pack 6',
+        rating: 5,
+        quote:
+          'Confort remarquable grâce au système de refroidissement Alexandrite / Nd:YAG. Dès la deuxième séance, la réduction est impressionnante et la peau reste parfaitement apaisée.',
+        verifiedLabel: 'Patiente vérifiée · Alger',
+      },
+      {
+        id: 'laser-rev-2',
+        patientName: 'Yasmine Touati',
+        initials: 'YT',
+        treatmentTag: 'Laser Visage & Corps',
+        rating: 5,
+        quote:
+          'Ponctualité exemplaire à chaque visite : aucune attente au salon, cabine impeccable et praticienne à l’écoute qui ajuste l’intensité selon mon phototype.',
+        verifiedLabel: 'Patiente vérifiée · Hydra',
+      },
+      {
+        id: 'laser-rev-3',
+        patientName: 'Kenza Brahimi',
+        initials: 'KB',
+        treatmentTag: 'Protocole Nd:YAG & Éclat',
+        rating: 5,
+        quote:
+          'Des résultats visibles dès les premières séances avec un vrai suivi médical. La réservation du créneau en ligne est fluide et les rappels avant séance sont très pratiques.',
+        verifiedLabel: 'Patiente vérifiée · El Biar',
       },
     ],
     faqs: [
@@ -344,17 +363,36 @@ export const VERTICAL_PROFILES: Record<VerticalType, VerticalProfile> = {
           'Créneaux dédiés aux douleurs aiguës et plans de traitement détaillés remis par écrit dès la première visite.',
       },
     ],
-    beforeAfterCases: [
+    reviews: [
       {
-        id: 'dental-case-whitening',
-        tabLabel: 'Esthétique Dentaire',
-        title: 'Blanchiment & Esthétique Dentaire',
-        caption: "Éclaircissement naturel de l'émail et harmonisation du sourire.",
-        durationMeta: 'Séance : 45 min • Résultat immédiat',
-        beforeImage: '/images/dentist.webp',
-        afterImage: '/images/dentist.webp',
-        beforeCrop: { x: 0, y: 0.04, w: 1, h: 0.45 },
-        afterCrop: { x: 0, y: 0.51, w: 1, h: 0.29 },
+        id: 'dental-rev-1',
+        patientName: 'Sarra Benmohamed',
+        initials: 'SB',
+        treatmentTag: 'Blanchiment Dentaire LED',
+        rating: 5,
+        quote:
+          'Soin réalisé tout en douceur et totalement sans douleur. Le blanchiment LED a éclairci mon sourire naturellement dès la sortie du cabinet, sans aucune sensibilité.',
+        verifiedLabel: 'Patiente vérifiée · Alger',
+      },
+      {
+        id: 'dental-rev-2',
+        patientName: 'Mehdi Kaddour',
+        initials: 'MK',
+        treatmentTag: 'Aligneurs Invisibles',
+        rating: 5,
+        quote:
+          'Prise de rendez-vous en ligne en 30 secondes sur mobile et prise en charge à l’heure exacte. Le résultat avec les aligneurs transparents dépasse mes attentes.',
+        verifiedLabel: 'Patient vérifié · Hydra',
+      },
+      {
+        id: 'dental-rev-3',
+        patientName: 'Nadia Rahmani',
+        initials: 'NR',
+        treatmentTag: 'Soins & Esthétique',
+        rating: 5,
+        quote:
+          'Cabinet d’une propreté irréprochable. L’équipe prend le temps d’expliquer chaque étape avant l’acte, ce qui met immédiatement en confiance même pour les soins complexes.',
+        verifiedLabel: 'Patiente vérifiée · Ben Aknoun',
       },
     ],
     faqs: [
@@ -552,17 +590,36 @@ export const VERTICAL_PROFILES: Record<VerticalType, VerticalProfile> = {
           'Ordonnances dermo-cosmétiques et protocoles médicaux calibrés spécifiquement pour les peaux méditerranéennes.',
       },
     ],
-    beforeAfterCases: [
+    reviews: [
       {
-        id: 'derma-case-acne',
-        tabLabel: 'Acné & Cicatrices',
-        title: "Traitement de l'Acné & Cicatrices",
-        caption: 'Réduction des imperfections inflammatoires et lissage du grain de peau.',
-        durationMeta: 'Protocole : 3 à 4 séances • Peau nette',
-        beforeImage: '/images/acne.webp',
-        afterImage: '/images/acne.webp',
-        beforeCrop: { x: 0, y: 0, w: 0.488, h: 1 },
-        afterCrop: { x: 0.512, y: 0, w: 0.488, h: 1 },
+        id: 'derma-rev-1',
+        patientName: 'Inès Bouzid',
+        initials: 'IB',
+        treatmentTag: 'Protocole Acné & Cicatrices',
+        rating: 5,
+        quote:
+          'Un suivi dermatologique sérieux et progressif pour mon acné inflammatoire. Chaque ordonnance a été ajustée avec précision et ma peau a retrouvé un grain net en quelques semaines.',
+        verifiedLabel: 'Patiente vérifiée · Alger',
+      },
+      {
+        id: 'derma-rev-2',
+        patientName: 'Sofiane Amrani',
+        initials: 'SA',
+        treatmentTag: 'Bilan Cutané & Mélasma',
+        rating: 5,
+        quote:
+          'Explications claires au dermatoscope et réponses précises à toutes mes questions sur les actifs adaptés à ma peau. On repart avec un protocole simple et réaliste.',
+        verifiedLabel: 'Patient vérifié · Dély Ibrahim',
+      },
+      {
+        id: 'derma-rev-3',
+        patientName: 'Chahinez Mansour',
+        initials: 'CM',
+        treatmentTag: 'Mésothérapie PRP',
+        rating: 5,
+        quote:
+          'Créneau réservé très rapidement en ligne sans appels interminables. Accueil chaleureux, hygiène stricte et consignes de soin envoyées directement avant la visite.',
+        verifiedLabel: 'Patiente vérifiée · Hydra',
       },
     ],
     faqs: [
@@ -760,17 +817,36 @@ export const VERTICAL_PROFILES: Record<VerticalType, VerticalProfile> = {
           'Dossier médical numérisé avec créneaux régulés à l’avance pour limiter l’attente en salle à environ 10 minutes.',
       },
     ],
-    beforeAfterCases: [
+    reviews: [
       {
-        id: 'doctor-case-suivi',
-        tabLabel: 'Suivi Dermatologique',
-        title: 'Suivi Dermatologique & Soins Ciblés',
-        caption: "Résorption de l'inflammation cutanée après protocole médical personnalisé.",
-        durationMeta: 'Suivi : 2 semaines • Résultat clinique',
-        beforeImage: '/images/laser.webp',
-        afterImage: '/images/laser.webp',
-        beforeCrop: { x: 0, y: 0, w: 0.495, h: 1 },
-        afterCrop: { x: 0.505, y: 0, w: 0.495, h: 1 },
+        id: 'doctor-rev-1',
+        patientName: 'Karim Haddad',
+        initials: 'KH',
+        treatmentTag: 'Première Consultation',
+        rating: 5,
+        quote:
+          'Écoute attentive et diagnostic rigoureux sans précipitation. Le médecin a pris le temps d’analyser l’ensemble de mes bilans précédents avec beaucoup de clarté.',
+        verifiedLabel: 'Patient vérifié · Alger',
+      },
+      {
+        id: 'doctor-rev-2',
+        patientName: 'Samira Ouali',
+        initials: 'SO',
+        treatmentTag: 'Échographie & Bilan',
+        rating: 5,
+        quote:
+          'Zéro attente en salle grâce à la réservation en ligne : je suis passée à l’heure prévue et j’avais préparé tous mes examens grâce à la liste affichée sur le site.',
+        verifiedLabel: 'Patiente vérifiée · Kouba',
+      },
+      {
+        id: 'doctor-rev-3',
+        patientName: 'Riyad Belkacem',
+        initials: 'RB',
+        treatmentTag: 'Suivi Chronique',
+        rating: 5,
+        quote:
+          'Suivi médical structuré et compte-rendu limpide à chaque visite. L’organisation du secrétariat et les rappels WhatsApp rendent le parcours patient vraiment serein.',
+        verifiedLabel: 'Patient vérifié · Hydra',
       },
     ],
     faqs: [

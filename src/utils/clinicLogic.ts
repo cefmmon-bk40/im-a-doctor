@@ -120,17 +120,6 @@ export function calculateLaserPrice(
   };
 }
 
-export function calculateComparisonPercentFromPointer(
-  clientX: number,
-  rectLeft: number,
-  rectWidth: number,
-  minPercent: number = 5,
-  maxPercent: number = 95
-): number {
-  if (rectWidth <= 0) return 50;
-  const rawPercent = ((clientX - rectLeft) / rectWidth) * 100;
-  return Math.min(maxPercent, Math.max(minPercent, Math.round(rawPercent * 10) / 10));
-}
 
 export function toIsoDate(date: Date): string {
   const year = date.getFullYear();

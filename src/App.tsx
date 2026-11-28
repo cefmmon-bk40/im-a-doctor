@@ -12,9 +12,9 @@ import { Header } from './components/Header';
 import { HeroSection } from './components/HeroSection';
 import { BookingFlow } from './components/BookingFlow';
 import { MedicalCommitmentsSection } from './components/MedicalCommitmentsSection';
-import { BeforeAfterSection } from './components/BeforeAfterSection';
+import { PatientReviewsSection } from './components/PatientReviewsSection';
 import { FaqSection } from './components/FaqSection';
-import { ClinicInfoSection } from './components/ClinicInfoSection';
+import { LocationSection } from './components/LocationSection';
 import { Footer } from './components/Footer';
 import { ReceptionModal } from './components/ReceptionModal';
 
@@ -137,17 +137,21 @@ export default function App() {
           pillars={profile.trustPillars}
         />
 
-        <BeforeAfterSection
-          key={`ba-${config.type}`}
-          vertical={config.type}
-          theme={theme}
-          cases={profile.beforeAfterCases}
+        <PatientReviewsSection
+          key={`reviews-${config.type}`}
+          reviews={profile.reviews}
           onStartBooking={scrollToBooking}
         />
 
-        <FaqSection key={`faq-${config.type}`} theme={theme} faqs={profile.faqs} />
+        <FaqSection
+          key={`faq-${config.type}`}
+          theme={theme}
+          faqs={profile.faqs}
+          prepProtocolTitle={profile.prepProtocolTitle}
+          prepChecklist={profile.prepChecklist}
+        />
 
-        <ClinicInfoSection config={config} profile={profile} />
+        <LocationSection config={config} />
       </main>
 
       <Footer config={config} theme={theme} />
